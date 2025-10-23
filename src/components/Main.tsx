@@ -67,7 +67,7 @@ export default function Main() {
           glitchColors={["#00ff55", "#00cc44", "#00aa33"]}
           glitchSpeed={50}
           centerVignette={true}
-          outerVignette={true}
+          outerVignette={false}
           smooth={true}
         />
       </div>
