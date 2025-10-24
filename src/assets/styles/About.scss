@@ -1,0 +1,28 @@
+.about-section {
+    padding: 120px 15%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    text-align: left;
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(0, 255, 85, 0.15);
+    border-bottom: 1px solid rgba(0, 255, 85, 0.15);
+  
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+  
+      h2 {
+        font-size: 3rem;
+        color: #00ff55;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(0, 255, 85, 0.4);
+      }
+  
+      p {
+        font-size: 1.1em;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 1.5rem;
+      }
+    }
+  }

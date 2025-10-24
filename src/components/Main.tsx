@@ -4,6 +4,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "../assets/styles/Main.scss";
 import myHeadshot from "../assets/images/headshot.jpg";
 import LetterGlitch from "./LetterGlitch";
+import TextPressure from "./TextPressure";
 
 export default function Main() {
   const helloText = "Hello World, I'm";
@@ -11,12 +12,11 @@ export default function Main() {
 
   useEffect(() => {
     let i = 0;
-    const speed = 75;
     const timer = setInterval(() => {
       setHelloTyped(helloText.slice(0, i + 1));
       i++;
       if (i === helloText.length) clearInterval(timer);
-    }, speed);
+    }, 75);
     return () => clearInterval(timer);
   }, []);
 
@@ -60,9 +60,9 @@ export default function Main() {
   const subtitle = phrases[index].slice(0, subIndex);
 
   return (
-    <div className="container">
-      {/* 🟩 Matrix-style animated background */}
-      <div className="glitch-wrapper">
+    <section id="home" className="main-section">
+      {/* ✅ Glitch stays in the background but above page base */}
+      <div className="glitch-layer">
         <LetterGlitch
           glitchColors={["#00ff55", "#00cc44", "#00aa33"]}
           glitchSpeed={50}
@@ -72,14 +72,12 @@ export default function Main() {
         />
       </div>
 
-      {/* ✨ Foreground */}
       <div className="about-section">
         <div className="image-wrapper">
           <img src={myHeadshot} alt="Avatar" />
         </div>
 
         <div className="content">
-          {/* Bigger icons with subtle backdrop */}
           <div className="social_icons">
             <div className="icon-bg">
               <a
@@ -105,7 +103,30 @@ export default function Main() {
             <span className="terminal-text">{helloTyped}</span>
           </div>
 
-          <h1>Sohum Guha</h1>
+          <div
+            style={{
+              width: "100%",
+              height: "250px",
+              marginTop: "15px",
+              marginBottom: "-45px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <TextPressure
+              text={"SOHUM_GUHA"}
+              flex={true}
+              alpha={false}
+              stroke={true}
+              width={true}
+              weight={true}
+              italic={true}
+              textColor="#ccffcc"
+              strokeColor="#00ff55"
+              minFontSize={120}
+            />
+          </div>
 
           <div className="terminal-line">
             <span className="terminal-text">{subtitle}</span>
@@ -113,6 +134,6 @@ export default function Main() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

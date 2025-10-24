@@ -199,16 +199,18 @@ const LetterGlitch: React.FC<LetterGlitchProps> = ({
         />
       )}
       {centerVignette && (
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            pointerEvents: "none",
-            background:
-              "radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%)",
-          }}
-        />
-      )}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      pointerEvents: "none",
+      background:
+        "radial-gradient(ellipse 150% 150% at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0) 80%)",
+      transition: "opacity 0.8s ease-in-out",
+      mixBlendMode: "multiply",
+    }}
+  />
+)}
     </div>
   );
 };
